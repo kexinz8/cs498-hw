@@ -36,7 +36,13 @@ app.post('/register', (req, res) => {
 app.get('/list', (req, res) => {
          query = 'SELECT  *  FROM Users;';
          connection.query(query, (e,r,f) => { 
-         res.json({'users':r});
+         var count = r.length;
+         let  value = [];
+         for(let i=0; i < count; i++){
+             value.push(r[i].username);
+         }
+         console.log(value);
+         res.json({'users':value});
          
         });
    });
