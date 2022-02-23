@@ -41,7 +41,6 @@ app.get('/list', (req, res) => {
          for(let i=0; i < count; i++){
              value.push(r[i].username);
          }
-         console.log(value);
          res.json({'users':value});
          
         });
